@@ -1,0 +1,7 @@
+{
+  "name": "MeAlacene",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
