@@ -17,9 +17,9 @@ export class CupboardPage {
 
 
   constructor(private ingredientsService: IngredientsService) {
-    this.ingredientsService.getTest().then(resp => {
+    /* this.ingredientsService.getTest().then(resp => {
       console.log(resp)
-    });
+    }); */
   }
 
   cancel() {
