@@ -1,0 +1,108 @@
+<app-main-toolbar-component></app-main-toolbar-component>
+
+<ion-content [fullscreen]="true">
+
+    <ion-searchbar></ion-searchbar>
+
+    <ion-list-header> Tipos de ingredientes </ion-list-header>
+    <ion-grid class="scrolling-wrapper">
+        <ng-container *ngFor="let in of counter(10) ;let i = index">
+            <ion-row class="card">
+                <ion-col class="ion-align-self-center" size="6" style="padding: 0;">
+                    <ion-card>
+                        <ion-item>
+                            <ion-avatar slot="start">
+                                <img src="./../../../../assets/t-ingredients/vegetales.png" />
+                            </ion-avatar>
+                            <ion-label text-wrap>Vegetales</ion-label>
+                        </ion-item>
+                    </ion-card>
+                </ion-col>
+                <ion-col class="ion-align-self-center" size="6" style="padding: 0;">
+                    <ion-card>
+                        <ion-item>
+                            <ion-avatar slot="start">
+                                <img src="./../../../../assets/t-ingredients/vegetales.png" />
+                            </ion-avatar>
+                            <ion-label text-wrap>Vegetales</ion-label>
+                        </ion-item>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ng-container>
+    </ion-grid>
+
+    <ion-list style=" overflow-y: scroll;">
+        <ion-list-header> Ingredientes más antiguos... </ion-list-header>
+
+        <ng-container *ngFor="let in of counter(2) ;let i = index">
+            <ion-item>
+                <ion-avatar slot="start">
+                    <img src="./../../../../assets/t-ingredients/vegetales.png" />
+                </ion-avatar>
+                <ion-label>
+                    <h2>Vegetales</h2>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-avatar slot="start">
+                    <img src="./../../../../assets/t-ingredients/frutas.png" />
+                </ion-avatar>
+                <ion-label>
+                    <h2>Frutas</h2>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-avatar slot="start">
+                    <img src="./../../../../assets/t-ingredients/carnes.png" />
+                </ion-avatar>
+                <ion-label>
+                    <h2>Carnes</h2>
+                </ion-label>
+            </ion-item>
+        </ng-container>
+    </ion-list>
+</ion-content>
+<ion-footer collapse="fade">
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="6">
+                    <ion-button id="open-modal" expand="block">
+                        <ion-icon name="add"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-button id="open-modal" expand="block" color="medium">
+                        <ion-icon name="list-circle-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>
+
+
+
+
+<ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar>
+                <ion-buttons slot="start">
+                    <ion-button (click)="cancel()">Cancel</ion-button>
+                </ion-buttons>
+                <ion-title>Welcome</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+            <ion-item>
+                <ion-label position="stacked">Enter your name</ion-label>
+                <ion-input type="text" placeholder="Your name" [(ngModel)]="name"></ion-input>
+            </ion-item>
+        </ion-content>
+    </ng-template>
+</ion-modal>
