@@ -1,0 +1,64 @@
+<ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Agregar ingrediente</ion-title>
+                <ion-buttons slot="start">
+                    <ion-button (click)="cancel()">
+                        <ion-icon name="close"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+
+            <ion-searchbar placeholder="Ingrediente"></ion-searchbar>
+
+            <ion-item>
+                <ion-label position="stacked">Nombre</ion-label>
+                <ion-input type="text" placeholder="Ingrediente"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Descripción</ion-label>
+                <ion-input type="textarea" placeholder="Anotaciones"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label position="stacked">Calorías</ion-label>
+                <ion-input type="number" placeholder="500cal"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">Cantidad</ion-label>
+                <ion-input type="number" placeholder="1"></ion-input>
+            </ion-item>
+            <ion-list>
+                <ion-item>
+                    <ion-label position="stacked">Dimensional</ion-label>
+                    <ion-select interface="popover" placeholder="lb">
+                        <ion-select-option value="1">lb</ion-select-option>
+                        <ion-select-option value="2">g</ion-select-option>
+                        <ion-select-option value="3">oz</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+            <ion-item>
+                <ion-label position="stacked">Precio total</ion-label>
+                <ion-input type="number" placeholder="10.00"></ion-input>
+            </ion-item>
+
+        </ion-content>
+        <ion-footer collapse="fade">
+            <ion-toolbar>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="12">
+                            <ion-button (click)="confirm()" expand="block">
+                                Aceptar
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-toolbar>
+        </ion-footer>
+    </ng-template>
+</ion-modal>

@@ -22,19 +22,12 @@ export class CupboardPage {
     }); */
   }
 
-  cancel() {
-    this.modal.dismiss(null, 'cancel');
+  onWillDismissEvent(event: Event) {
+    console.log('hola', event)
   }
 
-  confirm() {
-    this.modal.dismiss(this.name, 'confirm');
-  }
-
-  onWillDismiss(event: Event) {
-    const ev = event as CustomEvent<OverlayEventDetail<string>>;
-    if (ev.detail.role === 'confirm') {
-      this.message = `Hello, ${ev.detail.data}!`;
-    }
+  hola(){
+    console.log('asdasdas')
   }
 
   counter(i: number) {
