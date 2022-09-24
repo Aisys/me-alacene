@@ -1,0 +1,9 @@
+#altura-s {
+    input[type=number]:before {
+        content: "$";
+    }
+}
+
+input[type=number]:before {
+    content: "$";
+}

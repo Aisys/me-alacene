@@ -1,0 +1,28 @@
+<ion-row style="height: 100%; display: flex; align-items: center; justify-content: center;">
+  <ion-col style="margin-top: -5em;">
+
+    <h1 style="text-align: center; font-weight: bold;">Me ALACENE</h1>
+
+    <ion-card style="width: 95%;">
+      <ion-card-header>
+        <ion-card-title>Ingresar</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Correo</ion-label>
+          <ion-input type="email" value="usuario@gmail.com" placeholder="usr@correo.com"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input type="password" placeholder="********"></ion-input>
+        </ion-item>
+        <ion-button (click)="login()" expand="block">
+          Aceptar
+        </ion-button>
+        <br>
+        <a>Olvidé mi contraseña</a> <br>
+        <a routerLink="/register">Crear nueva cuenta</a>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>

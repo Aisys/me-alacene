@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { CupboardPage } from './cupboard.page';
 import { AddIngredientComponent } from './add-ingredient/add-ingredient.component';
 
+import { MainToolbarComponent } from '../../../public/main-toolbar/main-toolbar.component';
+import { MainToolbarModule } from '../../../public/main-toolbar/main-toolbar.module';
+
 import { CupboardPageRoutingModule } from './cupboard-routing.module';
-// import { MainToolbarComponent } from '../main-toolbar-component/main-toolbar-component';
-import { MainToolbarComponentModule } from '../../../public/main-toolbar-component/main-toolbar-component.module';
-import { MainToolbarComponent } from '../../../public/main-toolbar-component/main-toolbar-component';
+
 import { IngredientsService } from 'src/app/services/ingredients.service';
 
 @NgModule({
@@ -17,7 +18,7 @@ import { IngredientsService } from 'src/app/services/ingredients.service';
     CommonModule,
     FormsModule,
     CupboardPageRoutingModule,
-    MainToolbarComponentModule
+    MainToolbarModule,
   ],
   declarations: [
     CupboardPage,

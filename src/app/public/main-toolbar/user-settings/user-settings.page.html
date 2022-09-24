@@ -1,0 +1,68 @@
+<ion-modal trigger="modal-user-settings" (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Configuraciones</ion-title>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="logout()">
+            <ion-icon name="log-out-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+
+      <ion-item>
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input type="text" value="Usuario" placeholder="Usuario"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Correo</ion-label>
+        <ion-input type="email" value="usuario@gmail.com" placeholder="usr@correo.com"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input type="password" placeholder="********"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Altura</ion-label>
+        <ion-input type="number" class="altura-s" value="170" placeholder="170cm"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Peso</ion-label>
+        <ion-input type="number" value="56" placeholder="56kg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Límite calórico semanal</ion-label>
+        <ion-input type="number" value="3000" placeholder="1"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Presupuesto mensual</ion-label>
+        <ion-input type="number" value="1000" placeholder="1000"></ion-input>
+      </ion-item>
+
+    </ion-content>
+
+
+    <ion-footer collapse="fade">
+      <ion-toolbar>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <ion-button (click)="confirm()" expand="block">
+                Aceptar
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+    </ion-footer>
+  </ng-template>
+</ion-modal>
