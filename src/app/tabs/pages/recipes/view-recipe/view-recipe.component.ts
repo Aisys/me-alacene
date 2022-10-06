@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { IonModal, ModalController } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
-import { IngredientsService } from 'src/app/services/ingredients.service';
 
 @Component({
   selector: 'app-view-recipe',

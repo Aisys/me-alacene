@@ -1,0 +1,33 @@
+<ion-modal trigger="modal-view-ingredient" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Detalle ingrediente</ion-title>
+                <ion-buttons slot="start">
+                    <ion-button (click)="cancel()">
+                        <ion-icon name="close"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+
+            holas
+
+        </ion-content>
+
+        <ion-footer collapse="fade">
+            <ion-toolbar>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="12">
+                            <ion-button (click)="confirm()" expand="block">
+                                Aceptar
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-toolbar>
+        </ion-footer>
+    </ng-template>
+</ion-modal>

@@ -8,6 +8,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IngredientsService } from './services/ingredients.service';
+import { CupboardsService } from './services/cupboards.service';
 
 // import { MainToolbarComponentModule } from './main-toolbar-component/main-toolbar-component.module';
 // import { MainToolbarComponent } from './main-toolbar-component/main-toolbar-component';
@@ -23,6 +24,7 @@ import { IngredientsService } from './services/ingredients.service';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     IngredientsService,
+    CupboardsService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [ ],

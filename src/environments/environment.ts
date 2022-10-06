@@ -6,11 +6,13 @@ const mainRoute = 'http://localhost:3000/';
 
 const services = {
   apiIngredients: mainRoute + 'ingredients',
+  apiCupboards: mainRoute + 'cupboards',
 };
 
 export const environment = {
   production: false,
   services,
+  currentUserId: '633dcdb004b2b65df95d3f7c'
 };
 
 /*

@@ -4,11 +4,11 @@ import { OverlayEventDetail } from '@ionic/core/components';
 import { CupboardsService } from 'src/app/services/cupboards.service';
 
 @Component({
-  selector: 'app-add-ingredient',
-  templateUrl: 'add-ingredient.component.html',
-  styleUrls: ['add-ingredient.component.scss'],
+  selector: 'app-view-ingredient',
+  templateUrl: 'view-ingredient.component.html',
+  styleUrls: ['view-ingredient.component.scss'],
 })
-export class AddIngredientComponent {
+export class ViewIngredientComponent {
 
   @ViewChild(IonModal) modal: IonModal;
   @Output() onWillDismissEvent = new EventEmitter<any>();
