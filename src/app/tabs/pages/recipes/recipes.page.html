@@ -3,45 +3,78 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-searchbar animated="true" placeholder="Buscar"></ion-searchbar>
+  <div class="sticky-box">
 
-  <ion-toolbar class="ion-align-items-center">
-    <ion-chip>Recetario</ion-chip>
-    <ion-chip>Favoritas</ion-chip>
-    <ion-buttons slot="end">
-      <ion-button id="click-trigger">
-        <ion-icon name="filter-outline"></ion-icon>
-      </ion-button>
-      <ion-popover trigger="click-trigger" triggerAction="click">
-        <ng-template>
-          <ion-list>
-            <ion-item button>
-              <ion-label>Próximos a vencer</ion-label>
-            </ion-item>
-            <ion-item button>
-              <ion-label>Mayor cantidad</ion-label>
-            </ion-item>
-            <ion-item button>
-              <ion-label>Menor cantidad</ion-label>
-            </ion-item>
-          </ion-list>
-        </ng-template>
-      </ion-popover>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar class="ion-align-items-center">
 
-  <ng-container *ngFor="let in of counter(5) ;let i = index">
+      <ion-item>
+        <ion-label>Según mis ingredientes</ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+
+    </ion-toolbar>
+
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+        <ion-col size="10">
+          <ion-searchbar animated="true" placeholder="Buscar"></ion-searchbar>
+        </ion-col>
+        <ion-col size="2" class="ion-align-items-center ion-justify-content-center">
+          <ion-button fill="clear" id="click-trigger">
+            <ion-icon name="filter-outline"></ion-icon>
+          </ion-button>
+          <ion-popover trigger="click-trigger" triggerAction="click">
+            <ng-template>
+              <ion-list>
+                <ion-item button>
+                  <ion-label>Próximos a vencer</ion-label>
+                </ion-item>
+                <ion-item button>
+                  <ion-label>Mayor cantidad</ion-label>
+                </ion-item>
+                <ion-item button>
+                  <ion-label>Menor cantidad</ion-label>
+                </ion-item>
+              </ion-list>
+            </ng-template>
+          </ion-popover>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+  <ion-card style="width: 95%;">
+    <ion-card-header>
+      <ion-card-title>¡Busca tus recetas!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        Realiza tu búsqueda, personalízala como desees y disfruta de tu experiencia :)
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ng-container *ngFor="let recipe of recipes;">
     <ion-card style="width: 95%;">
       <ion-card-header>
-        <ion-card-title>Receta de tal cosa</ion-card-title>
+        <ion-card-title>{{recipe._id.name}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          Ingrediente <br>
-          Ingrediente <br>
-          Ingrediente <br>
-          Ingrediente <br>
-          ...
+          {{recipe._id.description}}
+        </ion-item>
+        <ion-item>
+          <ion-icon name="timer-outline" slot="start"></ion-icon>
+          <ion-label>
+            {{recipe._id.cookingTimeMin}} min
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="people-outline" slot="start"></ion-icon>
+          <ion-label>
+            {{recipe._id.portions}}
+          </ion-label>
         </ion-item>
 
         <ion-row>
@@ -51,13 +84,13 @@
             </ion-button>
           </ion-col>
           <ion-col>
-            <ion-button (click)="openModal(i)" expand="block">
+            <ion-button (click)="openModal(recipe)" expand="block">
               Ver receta
             </ion-button>
           </ion-col>
         </ion-row>
       </ion-card-content>
     </ion-card>
-  </ng-container>
+  </ng-container> -->
 
 </ion-content>

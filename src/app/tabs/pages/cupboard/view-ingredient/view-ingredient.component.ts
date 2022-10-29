@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
-import { IonModal } from '@ionic/angular';
+import { IonModal, ModalController } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { CupboardsService } from 'src/app/services/cupboards.service';
 
@@ -10,23 +10,26 @@ import { CupboardsService } from 'src/app/services/cupboards.service';
 })
 export class ViewIngredientComponent {
 
-  @ViewChild(IonModal) modal: IonModal;
+  ingredient:any = {};
   @Output() onWillDismissEvent = new EventEmitter<any>();
 
-  constructor(private cupboardsService: CupboardsService) {
+  constructor(private modalCtrl: ModalController) {
+  }
+
+  ngOnInit(): void {
+    console.log(this.ingredient);
   }
 
   cancel() {
-    this.modal.dismiss(null, 'cancel');
+    return this.modalCtrl.dismiss(null, 'cancel');
   }
 
   confirm() {
-    this.modal.dismiss('unonuevo', 'confirm');
+    return this.modalCtrl.dismiss('asdasd', 'confirm');
   }
-
   onWillDismiss(event: Event) {
+    this.ingredient = {};
     const ev = event as CustomEvent<OverlayEventDetail<string>>;
     this.onWillDismissEvent.emit(ev.detail)
   }
-
 }

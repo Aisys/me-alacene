@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { IonModal, ModalController } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 
@@ -7,11 +7,16 @@ import { OverlayEventDetail } from '@ionic/core/components';
   templateUrl: 'view-recipe.component.html',
   styleUrls: ['view-recipe.component.scss'],
 })
-export class  ViewRecipeComponent {
+export class  ViewRecipeComponent implements OnInit {
 
+  recipe:any = {};
   @Output() onWillDismissEvent = new EventEmitter<any>();
 
   constructor(private modalCtrl: ModalController) {
+  }
+
+  ngOnInit(): void {
+    console.log(this.recipe);
   }
 
   cancel() {
@@ -22,6 +27,7 @@ export class  ViewRecipeComponent {
     return this.modalCtrl.dismiss('asdasd', 'confirm');
   }
   onWillDismiss(event: Event) {
+    this.recipe = {};
     const ev = event as CustomEvent<OverlayEventDetail<string>>;
     this.onWillDismissEvent.emit(ev.detail)
   }

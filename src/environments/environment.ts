@@ -7,6 +7,7 @@ const mainRoute = 'http://localhost:3000/';
 const services = {
   apiIngredients: mainRoute + 'ingredients',
   apiCupboards: mainRoute + 'cupboards',
+  apiRecipes: mainRoute + 'recipes',
 };
 
 export const environment = {
