@@ -1,7 +1,7 @@
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainToolbarComponent } from './main-toolbar.component';
 import { UserSettingsPage } from "./user-settings/user-settings.page";
 import { RouterModule } from '@angular/router';
@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
+    ReactiveFormsModule,
     IonicModule,
     CommonModule,
     FormsModule,

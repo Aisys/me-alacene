@@ -9,7 +9,7 @@
 
       <ion-item>
         <ion-label>Según mis ingredientes</ion-label>
-        <ion-toggle slot="end"></ion-toggle>
+        <ion-toggle checked={{byOwnIngredients}} (ionChange)="byIngredientsChange($event)" slot="end"></ion-toggle>
       </ion-item>
 
     </ion-toolbar>
@@ -44,53 +44,57 @@
 
   </div>
 
-  <ion-card style="width: 95%;">
-    <ion-card-header>
-      <ion-card-title>¡Busca tus recetas!</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item>
-        Realiza tu búsqueda, personalízala como desees y disfruta de tu experiencia :)
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
 
-  <!-- <ng-container *ngFor="let recipe of recipes;">
+  <ng-container *ngIf="recipes.length > 0; else noRecipes">
+    <ng-container *ngFor="let recipe of recipes;">
+      <ion-card style="width: 95%;">
+        <ion-card-header>
+          <ion-card-title>{{recipe._id.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            {{recipe._id.description}}
+          </ion-item>
+          <ion-item>
+            <ion-icon name="timer-outline" slot="start"></ion-icon>
+            <ion-label>
+              {{recipe._id.cookingTimeMin}} min
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="people-outline" slot="start"></ion-icon>
+            <ion-label>
+              {{recipe._id.portions}}
+            </ion-label>
+          </ion-item>
+
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block">
+                <ion-icon name="star-outline"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="openModal(recipe)" expand="block">
+                Ver receta
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </ng-container>
+  <ng-template #noRecipes>
     <ion-card style="width: 95%;">
       <ion-card-header>
-        <ion-card-title>{{recipe._id.name}}</ion-card-title>
+        <ion-card-title>¡Busca tus recetas!</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          {{recipe._id.description}}
+          Realiza tu búsqueda, personalízala como desees y disfruta de tu experiencia :)
         </ion-item>
-        <ion-item>
-          <ion-icon name="timer-outline" slot="start"></ion-icon>
-          <ion-label>
-            {{recipe._id.cookingTimeMin}} min
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="people-outline" slot="start"></ion-icon>
-          <ion-label>
-            {{recipe._id.portions}}
-          </ion-label>
-        </ion-item>
-
-        <ion-row>
-          <ion-col>
-            <ion-button expand="block">
-              <ion-icon name="star-outline"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <ion-col>
-            <ion-button (click)="openModal(recipe)" expand="block">
-              Ver receta
-            </ion-button>
-          </ion-col>
-        </ion-row>
       </ion-card-content>
     </ion-card>
-  </ng-container> -->
+  </ng-template>
 
 </ion-content>

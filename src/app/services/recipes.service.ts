@@ -11,6 +11,9 @@ export class RecipesService {
 
   constructor(private http: HttpClient) {}
 
+  getAllRecipesByIngredients(): Promise<any> {
+    return this.http.get<any>(`${this.apiUrl}/cupboardId/${environment.currentUserId}`).toPromise();
+  }
 
   getAllRecipes(): Promise<any> {
     return this.http.get<any>(`${this.apiUrl}`).toPromise();

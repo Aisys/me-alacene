@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonModal, ModalController } from '@ionic/angular';
+import { IonModal, LoadingController, ModalController } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { CupboardsService } from 'src/app/services/cupboards.service';
 import { ViewIngredientComponent } from './view-ingredient/view-ingredient.component';
@@ -20,7 +20,8 @@ export class CupboardPage implements OnInit {
 
   constructor(
     private modalCtrl: ModalController,
-    private cupboardsService: CupboardsService
+    private cupboardsService: CupboardsService,
+    private loadingCtrl: LoadingController,
   ) {
     /* this.ingredientsService.getTest().then(resp => {
       console.log(resp)
@@ -33,6 +34,7 @@ export class CupboardPage implements OnInit {
       console.log(resp);
       this.userIngredients = resp;
     });
+    await this.showLoading();
   }
 
   onWillDismissEvent(event: Event) {
@@ -45,6 +47,15 @@ export class CupboardPage implements OnInit {
 
   counter(i: number) {
     return new Array(i);
+  }
+
+  async showLoading() {
+    const loading = await this.loadingCtrl.create({
+      duration: 200,
+      spinner: 'circles',
+    });
+
+    loading.present();
   }
 
   async openModal(ingredient) {
